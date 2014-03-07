@@ -1,9 +1,11 @@
-def fib(x)
-  if x == 0  
-    1
-  elsif x == 1    
-    1
-  else  
-    fib(x - 2) + fib(x - 1)    
-  end  
+def fib_upto(value)
+	num = []
+  x, y = 1, 1
+  while x < value
+  	x, y = y, x + y
+  	num << x if x.even?
+  end
+  num.reduce(:+)
 end 
+
+puts fib_upto(4000000)
