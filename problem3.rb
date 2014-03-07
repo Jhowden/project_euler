@@ -1,5 +1,5 @@
 def prime_factors(num)
-    primes = []
+  primes = []
   return primes if num == 1
     factors = (2..num).detect { |i| num % i == 0 }
     primes << factors
