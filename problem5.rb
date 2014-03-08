@@ -1,18 +1,13 @@
 def smallest_multiple
+  multiples = (2..20).to_a
   value = 20
-  multiples = []
+  multiple_found = false
 
-  while true
-    a = []
-    1.upto(20) do |num|
-      a << num if value % num == 0
-    end
-
-  multiples = a.dup
-  break if multiples.size == 20
-  value += 20
+  while !multiple_found
+    value_found = multiples.all? { |multiple| value % multiple == 0 }
+    break if value_found == true
+    value += 20
   end
-
   value
 end
 
