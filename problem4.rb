@@ -1,13 +1,11 @@
 def palindrome
   palindrome = 0
-  max = 999
-  range = (100..999)
-  until max <= 100
-    range.each do |num|
-      pal = max * num
+  
+  999.downto(100) do |max|
+    100.upto(999) do |min|
+      pal = max * min
       palindrome = pal if is_palindrome?(pal) && pal > palindrome
     end
-    max -= 1
   end
   palindrome
 end
